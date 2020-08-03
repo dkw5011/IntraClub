@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  root "sessions#home"
+  
   get '/signup' => 'players#new'
   post '/signup' => 'players#create'
 
