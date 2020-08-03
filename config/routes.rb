@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get '/signup' => 'players#new'
+  post '/signup' => 'players#create'
+
   resources :games
   resources :teams
   resources :players
