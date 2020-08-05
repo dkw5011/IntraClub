@@ -14,6 +14,8 @@ class PlayersController < ApplicationController
    end
 
    def show
+    @player = Player.find_by_id(params[:id])
+    redirect_to '/' if !@player
    end
 
    private
