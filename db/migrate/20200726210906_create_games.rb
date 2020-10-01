@@ -5,7 +5,7 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.string :team
       t.date :date
       t.time :time
-
+      
       t.timestamps
     end
   end

@@ -3,7 +3,7 @@ class CreateTeams < ActiveRecord::Migration[6.0]
     create_table :teams do |t|
       t.integer :wins
       t.integer :losses
-
+      
       t.timestamps
     end
   end
