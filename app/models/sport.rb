@@ -1,3 +1,4 @@
 class Sport < ApplicationRecord
-    has_many :players
+    has_many :games
+    has_many :teams, through: :games
 end
