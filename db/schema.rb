@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_01_134353) do
+ActiveRecord::Schema.define(version: 2020_10_01_175733) do
 
   create_table "games", force: :cascade do |t|
     t.string "location"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_134353) do
     t.integer "losses"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
   end
 
 end
