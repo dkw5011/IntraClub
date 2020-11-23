@@ -1,7 +1,17 @@
 <h1>Sign Up</h1>
 
-<%= form_for(@player, url: '/signup') do |f| %>
+<%= form_for(@player) do |f| %>
 
+<%= f.label :team_id, "Team" %>
+<%= f.collection_select :team_id, Team.all, :id, :name, prompt: true %>
+<br>
+<p> Or Create a New Team: </p>
+<%= f.fields_for :team_attributes do |team_fields| %>
+<%= team_fields.label :name %>
+<%= team_fields.text_field :name %>
+<% end %>
+<br>
+<br>
 <%= f.label :username %>
 <%= f.text_field :username %>
 <br>

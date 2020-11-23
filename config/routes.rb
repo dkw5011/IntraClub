@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  root "sessions#home"
   
-  get '/signup' => 'players#new'
-  post '/signup' => 'players#create'
-
+  get '/' => 'sessions#welcome'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-
+  get '/signup' => 'players#new'
+  post '/signup' => 'players#create'
   delete '/logout' => 'sessions#destroy'
   
   resources :games

@@ -10,14 +10,7 @@
   </head>
 
   <body>
-  <div>
-  <% if logged_in? %>
-  <%= link_to "Team Profile", team_path %> |
-  <%= link_to "Logout", logout_path, method: "delete" %>
-  <% else %>
-  <%= link_to "Sign Up", signup_path %>
-  <% end %>
-  </div>
+  
     <%= yield %>
   </body>
 </html>
