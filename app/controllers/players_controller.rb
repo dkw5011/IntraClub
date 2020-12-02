@@ -15,9 +15,9 @@ class PlayersController < ApplicationController
    end
 
    def show
+    redirect_if_not_logged_in
      @player = Player.find_by_id(params[:id])
-    # # # redirect_to '/' if !@player
-    render :show
+    redirect_to '/' if !@player
    end
 
    private
