@@ -12,5 +12,5 @@ class TeamsController < ApplicationController
     @coupon[:name] = params[:team][:name]
     @team.save
     redirect_to team_path(@team)
-  en
+   end
 end
