@@ -9,8 +9,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 <div>
-<% link_to "All Teams", teams_path %>
-<% link_to "Sign Out", logout_path %>
+<%if logged_in? %>
+<%= link_to "My Profile", player_path[:id]%>
+<%= link_to "All Teams", teams_path %>
+<%= link_to "Sign Out", logout_path %>
+<%end%>
 </div>
   <body>
     <%= yield %>

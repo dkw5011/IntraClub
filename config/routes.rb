@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/signup' => 'players#new'
   post '/signup' => 'players#create'
   delete '/logout' => 'sessions#destroy'
+  get '/players/:id' => 'players#show'
   
   resources :games
   resources :teams

@@ -5,6 +5,11 @@
 #     t.datetime "created_at", precision: 6, null: false
 #     t.datetime "updated_at", precision: 6, null: false
 #   end
+Sport.destroy_all
+Team.destroy_all
+Game.destroy_all
+Player.destroy_all
+
 
 Sport.create([
     {name: "Volleyball", total_players: 6, total_teams: 3},
@@ -49,9 +54,18 @@ Team.create([
 #     t.integer "team_id"
 #   end
 
-Player.create([
-    {name: "Wylie", email: "wylie@wylie.com", username: "wylie", password: "password", age: 17, team_id: Team.first.id},
-    {name: "Jess", email: "jess@jess.com", username: "jess", password: "pw", age: 22, team_id: Team.second.id}
-])
-
+# Player.create([
+#     {name: "Wylie", email: "wylie@wylie.com", username: "wylie", password: "password", age: 17, team_id: Team.first.id},
+#     {name: "Jess", email: "jess@jess.com", username: "jess", password: "pw", age: 22, team_id: Team.second.id}
+# ])
+5.times do
+    Player.create(
+        name: Faker::Name.name,
+        email: Faker::Internet.email,
+        username: Faker::Hipster.word,
+        password: "password",
+        age: Faker::Number.between(from: 18, to: 100),
+        team_id: Faker::Number.between(from: Team.first.id, to: Team.last.id)
+    )
+end
 #   

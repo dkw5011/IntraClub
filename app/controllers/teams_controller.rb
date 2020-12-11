@@ -9,7 +9,7 @@ class TeamsController < ApplicationController
 
    def create
     @team = Team.new
-    @coupon[:name] = params[:team][:name]
+    @team[:name] = params[:team][:name]
     @team.save
     redirect_to team_path(@team)
    end
