@@ -9,10 +9,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 <div>
-<%if logged_in? %>
-<%= link_to "My Profile", player_path[:id]%>
+<% if logged_in? %>
+<%= link_to "Sign Out", logout_path, method:"delete" %>
 <%= link_to "All Teams", teams_path %>
-<%= link_to "Sign Out", logout_path %>
+<%= link_to "All Games", team_games_path(:team_id) %>
+<%= link_to "Team Page", team_player_path(:id, :team_id) %>
 <%end%>
 </div>
   <body>

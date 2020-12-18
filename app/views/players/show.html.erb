@@ -4,7 +4,7 @@
 
 Current Players On team
 <ul>
-<% @player.team.players each do |player|%>
-<li> <%= player %> </li>
-<%end%>
+<% @player.team.players.each do |player|%>
+<li> <%= player.name %> </li>
+<% end %>
 </ul>

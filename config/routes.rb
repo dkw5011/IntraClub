@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/signup' => 'players#new'
   post '/signup' => 'players#create'
-  delete '/logout' => 'sessions#destroy'
-  get '/players/:id' => 'players#show'
+  get '/logout' => 'sessions#destroy'
   
-  resources :games
-  resources :teams
-  resources :players
+  resources :teams do
+    resources :players
+    resources :games
+  end
   resources :sports
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
