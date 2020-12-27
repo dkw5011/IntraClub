@@ -1,10 +1,11 @@
 <h1>All Games</h1>
 <% if logged_in? %>
 
-<% @games.player.team_id.each do |game|%>
+<% @games.each do |game|%>
 
 
 <li> Location: <%= game.location %>  </li> 
-<li> Date: <%= game.date %></li>
-<li> Time: <%= game.time %> </li>
-<%end%>
+    Time: <%= game.time %>
+    Team Name: <%= game.team.name %> 
+<% end %>
+<% end %>

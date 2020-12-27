@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
         if @player && @player.authenticate(params[:player][:password])
             session[:player_id] = @player.id
-            redirect_to team_player_path(@player.team_id, @player.id)
+            redirect_to team_player_path(@player.team_id,@player.id)
         else
             flash[:message] = "Incorrect Login Information Please Try Again"
             redirect_to login_path

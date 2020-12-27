@@ -38,10 +38,10 @@ Team.create([
 #     t.integer "sport_id"
 #   end
 
- Game.create([
-    {location: "YMCA", date: 2021-01-10 , time: '5:00', team_id: 1, sport_id: 1},
-    {location: "Boys and Girls Club", date: 2021-01-10, time: '6:00', team_id: 2, sport_id: 2}
-])
+#  Game.create([
+#     {location: "YMCA", date: 2021-01-10 , time: '5:00', team_id: 1, sport_id: 1},
+#     {location: "Boys and Girls Club", date: 2021-01-10, time: '6:00', team_id: 2, sport_id: 2}
+# ])
 
 #   create_table "players", force: :cascade do |t|
 #     t.string "name"
@@ -66,6 +66,15 @@ Team.create([
         password: "password",
         age: Faker::Number.between(from: 18, to: 100),
         team_id: Faker::Number.between(from: Team.first.id, to: Team.last.id)
+    )
+end
+
+10.times do
+    Game.create(
+        location: Faker::Address.street_address,
+        time: Faker::Time.forward(days:365, period: :evening, format: :short),
+        team_id: Faker::Number.between(from: Team.first.id, to: Team.last.id),
+        sport_id: Faker::Number.between(from: Sport.first.id, to: Sport.last.id)
     )
 end
 #   

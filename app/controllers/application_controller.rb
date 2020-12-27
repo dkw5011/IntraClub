@@ -7,11 +7,11 @@ helper_method :current_player, :logged_in?, :current_team
     end
 
     def current_team
-        @current_team = Player.find_by_id(:id)
+        @current_team = Team.find_by_id(:team_id)
     end
 
     def logged_in?
-        session[:player_id]
+        !!session[:player_id]
     end
 
     def redirect_if_not_logged_in

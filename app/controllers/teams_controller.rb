@@ -11,16 +11,16 @@ class TeamsController < ApplicationController
       @team = Team.find_by_id(params[:id])
    end
 
-   def create
-    @team = Team.new(team_params)
-    # @team[:name] = params[:team][:name]
-    @team.save
-    redirect_to team_path(@team)
-   end
+#    def create
+#     @team = Team.new(team_params)
+#     # @team[:name] = params[:team][:name]
+#     @team.save
+#     redirect_to team_path(@team)
+#    end
 
-   private
+#    private
 
-   def team_params
-    params.require(:team).permit(:wins, :losses, :name)
-   end
+#    def team_params
+#     params.require(:team).permit(:wins, :losses, :name)
+#    end
 end
