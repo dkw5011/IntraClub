@@ -21,4 +21,17 @@ class SessionsController < ApplicationController
             redirect_to login_path
         end
     end
+
+    def omniauth
+        @player = Player.from_omniauth(auth)
+        @player.save
+        session[:player_id] = @player.id
+        redirect_to home_path
+    end
+
+    private
+
+    def auth
+        request.env['omniauth.auth']
+    end
 end
