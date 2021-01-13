@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   
 
-  resources :teams, only: [:index] do
+  resources :teams do
     resources :players, only: [:show]
-    resources :games,  only: [:show]
+    # resources :games, only: [:show]
   end
-  
+  resources :teams
+  resources :players, only: [:index, :new, :create]
   
   resources :games, only: [:index]
   resources :sports

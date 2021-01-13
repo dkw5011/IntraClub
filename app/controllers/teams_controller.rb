@@ -1,5 +1,6 @@
 class TeamsController < ApplicationController
     def index
+        binding.pry
         @teams = Team.all
     end
     
@@ -8,7 +9,7 @@ class TeamsController < ApplicationController
     end
 
     def show
-      @team = Team.find_by_id(params[:id])
+      @team = Team.find(params[:id])
    end
 
 #    def create
@@ -18,9 +19,9 @@ class TeamsController < ApplicationController
 #     redirect_to team_path(@team)
 #    end
 
-#    private
+  private
 
-#    def team_params
-#     params.require(:team).permit(:wins, :losses, :name)
-#    end
+   def team_params
+    params.require(:team).permit(:wins, :losses, :name)
+   end
 end

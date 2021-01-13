@@ -2,16 +2,25 @@
 <br>
 <h2>Welcome to <%= @player.team.name %></h2>
 
-Current Players On team
+Current Players On Team
 <ul>
 <% @player.team.players.each do |player|%>
-<li> <%= player.username %> </li>
+<li> <%= player.username.capitalize %> </li>
 <% end %>
 </ul>
 Upcoming Games
+<br>
 <% @player.team.games.each do |game| %>
 <br>
 <li> Location: <%= game.location %>  </li> 
     Time: <%= game.time %>
 <br>
-    <%end%>
+<%end%>
+<br><br>
+<form>
+<label>Comment:</label><br>
+<textarea id="game_post" name="game[post]"></textarea><br>
+<input type="Submit" value="Submit Post">
+
+</form>
+    

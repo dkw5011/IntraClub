@@ -5,5 +5,5 @@
 <p>Losses: <%= team.losses %> </p>
 <p>Games:<%= team.games %> </p>
 
-
+<%= link_to "Team Page", team_player_path(team_id(team.id), current_player.id) %>
 <% end %>

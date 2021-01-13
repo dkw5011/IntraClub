@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
         @player = Player.from_omniauth(auth)
         @player.save
         session[:player_id] = @player.id
-        redirect_to home_path
+        redirect_to team_player_path(@player.team_id,@player.id)
     end
 
     private
