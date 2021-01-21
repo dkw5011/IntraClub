@@ -13,7 +13,8 @@
 <%= link_to "Sign Out", logout_path, method:"delete" %> |
 <%= link_to "All Teams", teams_path %> |
 <%= link_to "All Games", games_path %> |
-<%#  %>
+<%#= Remember to check team player path at, and its arguments %>
+<%= link_to "My Team Page", team_player_path(current_player.team.id, current_player.id) %>
 <% else %>
 <%=link_to "Sign Up", signup_path %> |
  <%=link_to "Log In", login_path %>
