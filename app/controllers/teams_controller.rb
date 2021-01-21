@@ -1,6 +1,5 @@
 class TeamsController < ApplicationController
     def index
-        binding.pry
         @teams = Team.all
     end
     

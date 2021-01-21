@@ -33,8 +33,15 @@ class PlayersController < ApplicationController
   end
 
   def show
-    @team = Team.find_by_id(params[:id])
+      
+    @team = Team.find_by_id(params[:team_id])
     @player = Player.find_by_id(params[:id])
+    if @team && @player
+      render :show
+    else
+      redirect_to teams_path
+    end
+
   end
 
   private
