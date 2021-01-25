@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   post '/signup' => 'players#create'
   get '/logout' => 'sessions#destroy'
   
-
+  get '/auth/:provider/callback' => 'sessions#omniauth'
+  
   resources :teams do
     resources :players, only: [:show]
     # resources :games, only: [:show]
@@ -15,9 +16,9 @@ Rails.application.routes.draw do
   resources :teams
   resources :players, only: [:index, :new, :create]
   
-  resources :games, only: [:index]
+  resources :games, only: [:index, :show]
   resources :sports
 
-  get '/auth/:provider/callback' => 'sessions#omniauth'
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

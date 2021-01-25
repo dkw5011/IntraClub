@@ -12,15 +12,15 @@ Upcoming Games
 <br>
 <% @player.team.games.each do |game| %>
 <br>
-<li> Location: <%= game.location %>  </li> 
+<li> Location: <%= link_to game.location, game_path(game.id) %>  </li> 
     Time: <%= game.time %>
 <br>
 <%end%>
 <br><br>
-<form>
+<%# <form>
 <label>Comment:</label><br>
 <textarea id="game_post" name="game[post]"></textarea><br>
 <input type="Submit" value="Submit Post">
 
-</form>
+</form> %>
     

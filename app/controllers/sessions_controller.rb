@@ -23,10 +23,19 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        @player = Player.from_omniauth(auth)
-        @player.save
+        
+        @player = Player.find_or_create_by(email: auth[:info][:email]) do |player|
+            player.username = auth[:info][:first_name]
+            player.password = SecureRandom.hex(10)
+            
+        end
+        if @player.save
+            
         session[:player_id] = @player.id
-        redirect_to team_player_path(@player.team_id,@player.id)
+        redirect_to team_player_path(@player.team_id, @player.id)
+        else
+        redirect_to '/'
+        end
     end
 
     private
