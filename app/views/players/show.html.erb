@@ -13,7 +13,7 @@ Upcoming Games
 <% @player.team.games.each do |game| %>
 <br>
 <li> Location: <%= link_to game.location, game_path(game.id) %>  </li> 
-    Time: <%= game.time %>
+    Time: <%= game.time.strftime("%I:%M %p on %m/%d/%Y") %>
 <br>
 <%end%>
 <br><br>

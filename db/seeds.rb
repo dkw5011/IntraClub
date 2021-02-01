@@ -58,7 +58,7 @@ Team.create([
 #     {name: "Wylie", email: "wylie@wylie.com", username: "wylie", password: "password", age: 17, team_id: Team.first.id},
 #     {name: "Jess", email: "jess@jess.com", username: "jess", password: "pw", age: 22, team_id: Team.second.id}
 # ])
-5.times do
+10.times do
     Player.create(
         name: Faker::Name.name,
         email: Faker::Internet.email,
@@ -69,10 +69,10 @@ Team.create([
     )
 end
 
-10.times do
+15.times do
     Game.create(
         location: Faker::Address.street_address,
-        time: Faker::Time.forward(days:365, period: :evening, format: :short),
+        time: Faker::Time.forward(days: 90, period: :evening, format: :long),
         team_id: Faker::Number.between(from: Team.first.id, to: Team.last.id),
         sport_id: Faker::Number.between(from: Sport.first.id, to: Sport.last.id)
     )

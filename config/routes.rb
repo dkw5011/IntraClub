@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/signup' => 'players#new'
   post '/signup' => 'players#create'
   get '/logout' => 'sessions#destroy'
+  get '/teams/ordered_wins' => 'teams#ordered_wins'
   
   get '/auth/:provider/callback' => 'sessions#omniauth'
   
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
     resources :players, only: [:show]
     # resources :games, only: [:show]
   end
+
+
   resources :teams
   resources :players, only: [:index, :new, :create]
   
