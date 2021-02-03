@@ -5,10 +5,5 @@
 <%= @game.time %>
 <%= @game.team_id %>
 
-<form>
-<label>Comment:</label><br>
-<textarea id="game_post" name="game[post]"></textarea><br>
-<input type="Submit" value="Submit Post">
-
-</form>
+<%= link_to "Add a Comment", edit_game_path(@game) %>
     

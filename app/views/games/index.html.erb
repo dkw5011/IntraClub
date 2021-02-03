@@ -4,7 +4,7 @@
 <% @games.each do |game|%>
 
 
-<li> Location: <%= game.location %>  </li> 
+<li> Location: <%= link_to game.location, game_path(game) %>  </li> 
     Time: <%= game.time %>
     Team Name: <%= game.team.name %> 
 <% end %>

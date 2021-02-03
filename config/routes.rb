@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :teams
   resources :players, only: [:index, :new, :create]
   
-  resources :games, only: [:index, :show]
+  resources :games
   resources :sports
 
   
