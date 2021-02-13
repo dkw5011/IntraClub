@@ -13,7 +13,8 @@ Player.destroy_all
 
 Sport.create([
     {name: "Volleyball", total_players: 6, total_teams: 3},
-    {name: "Bowling", total_players: 4, total_teams: 5}
+    {name: "Bowling", total_players: 4, total_teams: 5},
+    {name: "Basketball", total_players: 12, total_teams: 4}
 ])
 
 Team.create([

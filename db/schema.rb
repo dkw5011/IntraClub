@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_032032) do
+ActiveRecord::Schema.define(version: 2021_02_12_031542) do
 
   create_table "games", force: :cascade do |t|
     t.string "location"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2020_12_02_032032) do
     t.integer "team_id"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.integer "game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "player_id"
+    t.index ["game_id"], name: "index_posts_on_game_id"
+  end
+
   create_table "sports", force: :cascade do |t|
     t.string "name"
     t.integer "total_players"
@@ -51,4 +60,5 @@ ActiveRecord::Schema.define(version: 2020_12_02_032032) do
     t.string "name"
   end
 
+  add_foreign_key "posts", "games"
 end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :posts
   get '/' => 'sessions#welcome'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -19,7 +20,9 @@ Rails.application.routes.draw do
   resources :teams
   resources :players, only: [:index, :new, :create]
   
-  resources :games
+  resources :games do
+    resources :posts
+  end
   resources :sports
 
   

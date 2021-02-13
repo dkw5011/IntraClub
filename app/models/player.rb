@@ -1,6 +1,6 @@
 class Player < ApplicationRecord
     belongs_to :team
-  
+    has_many :posts
     validates :username, :email, presence: true
     validates :username, :email, uniqueness: true
     

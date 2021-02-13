@@ -1,0 +1,8 @@
+<%= form_for (@post) do |f| %>
+<%= f.hidden_field :game_id, :value => @post.game_id %>
+<%= f.hidden_field :player_id, :value => @post.player_id %>
+  <%= f.label :content %>
+  <br>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+<% end %>
